@@ -41,7 +41,7 @@ namespace Commander.Data
 
         public void UpdateCommand(Command command)
         {
-            throw new NotImplementedException();
+            var result =  (command!=null)?context.Update(command):throw new ArgumentNullException(nameof(command));
         }
         
     }
