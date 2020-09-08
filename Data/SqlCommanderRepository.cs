@@ -43,6 +43,10 @@ namespace Commander.Data
         {
             var result =  (command!=null)?context.Update(command):throw new ArgumentNullException(nameof(command));
         }
-        
+
+        public Command DeleteCommand(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
