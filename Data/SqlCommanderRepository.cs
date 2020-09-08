@@ -13,7 +13,7 @@ namespace Commander.Data
         {
             this.context = context;
         }
-        public  IEnumerable<Command> GetAppCommands()
+        public  IEnumerable<Command> GetAllCommands()
         {
             return context.Commands;
         }
@@ -44,9 +44,14 @@ namespace Commander.Data
             var result =  (command!=null)?context.Update(command):throw new ArgumentNullException(nameof(command));
         }
 
-        public Command DeleteCommand(int id)
-        {
-            throw new NotImplementedException();
+        public void DeleteCommand(Command command)
+        { 
+            if (command==null)
+            {
+                throw new ArgumentNullException(nameof(command));
+            }
+            context.Commands.Remove(command);
+    
         }
     }
 }

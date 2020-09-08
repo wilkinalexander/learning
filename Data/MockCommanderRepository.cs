@@ -7,12 +7,12 @@ namespace Commander.Data
 {
     public class MockCommanderRepository : ICommanderRepository
     {
-        public Command DeleteCommand(int id)
+        public void DeleteCommand(Command command)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Command> GetAppCommands()
+        public IEnumerable<Command> GetAllCommands()
         {
            return new List<Command>
            {
